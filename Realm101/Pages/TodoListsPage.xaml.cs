@@ -18,6 +18,11 @@ namespace Realm101.Pages
 
         void AddToolbarItems_Clicked(object sender, System.EventArgs e) => AddTodoListGrid.IsVisible = true;
 
+        async void TodoListsListView_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        {
+            await Navigation.PushAsync(new TodoListPage((e.Item as TodoList).Id));
+        }
+
         void RemoveMenuItem_Clicked(object sender, System.EventArgs e)
         {
             var todoList = (sender as MenuItem)?.CommandParameter as TodoList;

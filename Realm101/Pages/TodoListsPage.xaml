@@ -6,7 +6,7 @@
 	
     <ContentPage.Content>
         <Grid>
-            <ListView x:Name="TodoListsListView">
+            <ListView x:Name="TodoListsListView" ItemTapped="TodoListsListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Name}">

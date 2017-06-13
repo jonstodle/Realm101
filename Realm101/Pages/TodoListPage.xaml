@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Realm101.Pages.TodoListPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+	<ContentPage.Content>
+        <Grid>
+            <ListView x:Name="TodosListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Title}" Detail="{Binding DueDate, StringFormat='{0:d}'}">
+                            <TextCell.ContextActions>
+                                <MenuItem Text="Remove" CommandParameter="{Binding .}" Clicked="RemoveMenuitem_Clicked"/>
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <Grid x:Name="AddTodoGrid" IsVisible="false" VerticalOptions="Center" BackgroundColor="#eeeeee">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <Entry x:Name="AddTodoEntry" Grid.ColumnSpan="2"/>
+                
+                <DatePicker x:Name="AddTodoDatePicker" Grid.Row="1" Grid.ColumnSpan="2"/>
+                
+                <Button Text="Add" Grid.Row="2" Clicked="AddTodoAddButton_Clicked"/>
+                
+                <Button Text="Cancel" Clicked="AddTodoCancelButton_Clicked" Grid.Row="2" Grid.Column="1"/>
+            </Grid>
+        </Grid>
+	</ContentPage.Content>
+</ContentPage>
