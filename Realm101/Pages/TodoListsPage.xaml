@@ -6,13 +6,7 @@
 	
     <ContentPage.Content>
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height=".25*"/>
-                <RowDefinition Height=".5*"/>
-                <RowDefinition Height=".25*"/>
-            </Grid.RowDefinitions>
-        
-            <ListView x:Name="TodoListsListView" Grid.RowSpan="3">
+            <ListView x:Name="TodoListsListView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Name}">
@@ -24,7 +18,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             
-            <Grid x:Name="AddTodoListGrid" IsVisible="false" VerticalOptions="Center" BackgroundColor="#eeeeee" Grid.Row="1">
+            <Grid x:Name="AddTodoListGrid" IsVisible="false" VerticalOptions="Center" BackgroundColor="#eeeeee">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
