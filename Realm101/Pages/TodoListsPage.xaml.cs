@@ -13,6 +13,7 @@ namespace Realm101.Pages
         {
             InitializeComponent();
 
+            Title = "Realm101";
             TodoListsListView.ItemsSource = _realm.All<TodoList>().OrderBy(list => list.Name).AsRealmCollection();
         }
 

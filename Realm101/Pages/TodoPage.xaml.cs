@@ -14,6 +14,7 @@ namespace Realm101.Pages
             InitializeComponent();
 
             BindingContext = _todo = _realm.Find<Todo>(todoId);
+            Title = _todo.Title;
             TasksListView.ItemsSource = _realm.All<Task>().OrderBy(task => task.DueDate).AsRealmCollection();
         }
 

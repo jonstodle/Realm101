@@ -14,6 +14,7 @@ namespace Realm101.Pages
             InitializeComponent();
 
             _todoList = _realm.Find<TodoList>(todoListId);
+            Title = _todoList.Name;
             TodosListView.ItemsSource = _todoList.Todos.OrderBy(todo => todo.DueDate).AsRealmCollection();
         }
 
