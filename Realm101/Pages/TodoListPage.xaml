@@ -26,6 +26,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition Height="100"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 
@@ -33,9 +34,11 @@
                 
                 <DatePicker x:Name="AddTodoDatePicker" Grid.Row="1" Grid.ColumnSpan="2"/>
                 
-                <Button Text="Add" Grid.Row="2" Clicked="AddTodoAddButton_Clicked"/>
+                <Editor x:Name="AddTodoEditor" Grid.Row="2" Grid.ColumnSpan="2"/>
                 
-                <Button Text="Cancel" Clicked="AddTodoCancelButton_Clicked" Grid.Row="2" Grid.Column="1"/>
+                <Button Text="Add" Grid.Row="3" Clicked="AddTodoAddButton_Clicked"/>
+                
+                <Button Text="Cancel" Clicked="AddTodoCancelButton_Clicked" Grid.Row="3" Grid.Column="1"/>
             </Grid>
         </Grid>
 	</ContentPage.Content>

@@ -37,8 +37,9 @@ namespace Realm101.Pages
         {
             if (!string.IsNullOrWhiteSpace(AddTodoEntry.Text))
             {
-                _realm.Write(() => _realm.Add(new Todo { Title = AddTodoEntry.Text, DueDate = AddTodoDatePicker.Date, Parent = _todoList }));
+                _realm.Write(() => _realm.Add(new Todo { Title = AddTodoEntry.Text, DueDate = AddTodoDatePicker.Date, Details = AddTodoEditor.Text, Parent = _todoList }));
                 AddTodoEntry.Text = "";
+                AddTodoEditor.Text = "";
                 AddTodoDatePicker.Date = DateTimeOffset.Now.Date;
                 AddTodoGrid.IsVisible = false;
             }
@@ -46,9 +47,10 @@ namespace Realm101.Pages
 
         void AddTodoCancelButton_Clicked(object sender, System.EventArgs e)
         {
-                AddTodoEntry.Text = "";
-                AddTodoDatePicker.Date = DateTimeOffset.Now.Date;
-                AddTodoGrid.IsVisible = false;
+            AddTodoEntry.Text = "";
+            AddTodoEditor.Text = "";
+            AddTodoDatePicker.Date = DateTimeOffset.Now.Date;
+            AddTodoGrid.IsVisible = false;
         }
 
         Realm _realm = Realm.GetInstance();

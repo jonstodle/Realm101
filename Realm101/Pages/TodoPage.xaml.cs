@@ -32,8 +32,9 @@ namespace Realm101.Pages
         {
             if (!string.IsNullOrWhiteSpace(AddTaskEntry.Text))
             {
-                _realm.Write(() => _realm.Add(new Task { Title = AddTaskEntry.Text, DueDate = AddTaskDatePicker.Date, Parent = _todo }));
+                _realm.Write(() => _realm.Add(new Task { Title = AddTaskEntry.Text, DueDate = AddTaskDatePicker.Date, Details = AddTaskEditor.Text, Parent = _todo }));
                 AddTaskEntry.Text = "";
+                AddTaskEditor.Text = "";
                 AddTaskDatePicker.Date = DateTimeOffset.Now.Date;
                 AddTaskGrid.IsVisible = false;
             }
@@ -42,6 +43,7 @@ namespace Realm101.Pages
         void AddTaskCancelButton_Clicked(object sender, System.EventArgs e)
         {
             AddTaskEntry.Text = "";
+            AddTaskEditor.Text = "";
             AddTaskDatePicker.Date = DateTimeOffset.Now.Date;
             AddTaskGrid.IsVisible = false;
         }
