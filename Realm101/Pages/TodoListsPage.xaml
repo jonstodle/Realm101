@@ -28,7 +28,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 
-                <Entry x:Name="AddTodoListEntry" Grid.ColumnSpan="2"/>
+                <Entry x:Name="AddTodoListEntry" Placeholder="Name" Grid.ColumnSpan="2"/>
                 
                 <Button Text="Add" Grid.Row="1" Clicked="AddTodoListAddButton_Clicked"/>
                 

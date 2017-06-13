@@ -30,7 +30,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 
-                <Entry x:Name="AddTodoEntry" Grid.ColumnSpan="2"/>
+                <Entry x:Name="AddTodoEntry" Placeholder="Title" Grid.ColumnSpan="2"/>
                 
                 <DatePicker x:Name="AddTodoDatePicker" Grid.Row="1" Grid.ColumnSpan="2"/>
                 

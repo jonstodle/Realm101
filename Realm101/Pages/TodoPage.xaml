@@ -39,7 +39,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 
-                <Entry x:Name="AddTaskEntry" Grid.ColumnSpan="2"/>
+                <Entry x:Name="AddTaskEntry" Placeholder="Title" Grid.ColumnSpan="2"/>
                 
                 <DatePicker x:Name="AddTaskDatePicker" Grid.Row="1" Grid.ColumnSpan="2"/>
                 
