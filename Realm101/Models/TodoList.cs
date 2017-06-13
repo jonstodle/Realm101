@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Realms;
 
 namespace Realm101.Models
@@ -9,6 +10,7 @@ namespace Realm101.Models
         [PrimaryKey]
         public string Id { get; set; } = Guid.NewGuid().ToString();
         public string Name { get; set; }
-        public IList<Todo> Todos { get; }
+        [Backlink(nameof(Todo.Parent))]
+        public IQueryable<Todo> Todos { get; }
     }
 }

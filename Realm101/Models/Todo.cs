@@ -11,6 +11,7 @@ namespace Realm101.Models
         public string Title { get; set; }
         public string Details { get; set; }
         public DateTimeOffset DueDate { get; set; }
+        public TodoList Parent { get; set; }
         [Backlink(nameof(Task.Parent))]
         public IQueryable<Task> Tasks { get; }
     }
