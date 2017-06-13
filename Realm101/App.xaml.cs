@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Realm101.Pages;
+using Xamarin.Forms;
 
 namespace Realm101
 {
@@ -8,7 +9,7 @@ namespace Realm101
         {
             InitializeComponent();
 
-            MainPage = new Realm101Page();
+            MainPage = new NavigationPage(new TodoListsPage());
         }
 
         protected override void OnStart()

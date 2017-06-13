@@ -1,5 +1,45 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Realm101.Pages.TodoListsPage">
-	<ContentPage.Content>
-	</ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddToolbarItems_Clicked"/>
+    </ContentPage.ToolbarItems>
+	
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".25*"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height=".25*"/>
+            </Grid.RowDefinitions>
+        
+            <ListView x:Name="TodoListsListView" Grid.RowSpan="3">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}">
+                            <TextCell.ContextActions>
+                                <MenuItem Text="Remove" IsDestructive="true" CommandParameter="{Binding .}" Clicked="RemoveMenuItem_Clicked"/>
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <Grid x:Name="AddTodoListGrid" IsVisible="false" VerticalOptions="Center" BackgroundColor="#eeeeee" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <Entry x:Name="AddTodoListEntry" Grid.ColumnSpan="2"/>
+                
+                <Button Text="Add" Grid.Row="1" Clicked="AddTodoListAddButton_Clicked"/>
+                
+                <Button Text="Cancel" Clicked="AddTodoListCancelButton_Clicked" Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>
