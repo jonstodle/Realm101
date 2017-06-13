@@ -16,6 +16,9 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\TodoListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\TodoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -29,6 +32,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\TodoListPage.xaml.cs">
       <DependentUpon>TodoListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\TodoPage.xaml.cs">
+      <DependentUpon>TodoPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

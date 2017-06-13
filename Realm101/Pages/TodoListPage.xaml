@@ -6,7 +6,7 @@
     
 	<ContentPage.Content>
         <Grid>
-            <ListView x:Name="TodosListView">
+            <ListView x:Name="TodosListView" ItemTapped="TodosListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Title}" Detail="{Binding DueDate, StringFormat='{0:d}'}">
