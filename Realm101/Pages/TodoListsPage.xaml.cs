@@ -29,7 +29,11 @@ namespace Realm101.Pages
             var todoList = (sender as MenuItem)?.CommandParameter as TodoList;
             if (todoList != null)
             {
-                _realm.Write(() => _realm.Remove(todoList));
+                _realm.Write(() =>
+                {
+                    foreach (var todo in todoList.Todos) _realm.Remove(todo);
+                    _realm.Remove(todoList);
+                });
             }
         }
 
