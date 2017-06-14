@@ -20,7 +20,7 @@
                     <DataTemplate>
                         <TextCell Text="{Binding Title}" Detail="{Binding DueDate, StringFormat='{0:d}'}">
                             <TextCell.ContextActions>
-                                <MenuItem Text="Remove" IsDestructive="true" CommandParameter="{Binding .}" Clicked="RemoveMenuItem_Clicked"/>
+                                <MenuItem Text="Done" IsDestructive="true" CommandParameter="{Binding .}" Clicked="DoneMenuItem_Clicked"/>
                             </TextCell.ContextActions>
                         </TextCell>
                     </DataTemplate>

@@ -25,7 +25,7 @@ namespace Realm101.Pages
             await Navigation.PushAsync(new TodoPage((e.Item as Todo).Id));
         }
 
-        void RemoveMenuitem_Clicked(object sender, System.EventArgs e)
+        void DoneMenuitem_Clicked(object sender, System.EventArgs e)
         {
             var todo = (sender as MenuItem)?.CommandParameter as Todo;
             if (todo != null)

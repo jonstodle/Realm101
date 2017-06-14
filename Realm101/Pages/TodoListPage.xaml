@@ -11,7 +11,7 @@
                     <DataTemplate>
                         <TextCell Text="{Binding Title}" Detail="{Binding DueDate, StringFormat='{0:d}'}">
                             <TextCell.ContextActions>
-                                <MenuItem Text="Remove" CommandParameter="{Binding .}" Clicked="RemoveMenuitem_Clicked"/>
+                                <MenuItem Text="Done" CommandParameter="{Binding .}" Clicked="DoneMenuitem_Clicked"/>
                             </TextCell.ContextActions>
                         </TextCell>
                     </DataTemplate>

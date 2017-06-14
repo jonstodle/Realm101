@@ -20,7 +20,7 @@ namespace Realm101.Pages
 
         void AddTaskButton_Clicked(object sender, System.EventArgs e) => AddTaskGrid.IsVisible = true;
 
-        void RemoveMenuItem_Clicked(object sender, System.EventArgs e)
+        void DoneMenuItem_Clicked(object sender, System.EventArgs e)
         {
             var task = (sender as MenuItem)?.CommandParameter as Task;
             if (task != null)
